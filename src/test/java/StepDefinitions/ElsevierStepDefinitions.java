@@ -26,14 +26,14 @@ public class ElsevierStepDefinitions {
 	String response = null;
 	HttpURLConnection con = null;
 
-@Given("^I try to access user information with correct \"([^\"]*)\" endpoint \"([^\"]*)\" and (?:correct|incorrect) token \"([^\"]*)\"$")
+@Given("^I try to access user information with (?:correct|incorrect) \"([^\"]*)\" endpoint \"([^\"]*)\" and (?:correct|incorrect) token \"([^\"]*)\"$")
 public void i_try_to_access_user_information_with_correct_endpoint_and_correct_token
 	(String httpMethod,String endpoint, String accessToken) throws Throwable {
 	
 	con = RestActions.getConnection(httpMethod, endpoint, accessToken);
 }
 
-@Given("^I try to shorten long url \"([^\"]*)\" with correct \"([^\"]*)\" endpoint \"([^\"]*)\" and (?:correct|incorrect) token \"([^\"]*)\"$")
+@Given("^I try to shorten long url \"([^\"]*)\" with (?:correct|incorrect) \"([^\"]*)\" endpoint \"([^\"]*)\" and (?:correct|incorrect) token \"([^\"]*)\"$")
 public void i_try_to_shorten_long_url_with_correct_endpoint_and_correct_token(String longUrl, String httpMethod, String endpoint, String accessToken) throws Throwable {
     
 	con = RestActions.getConnectionForLongUrl(httpMethod, endpoint, accessToken, longUrl);

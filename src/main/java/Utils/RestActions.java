@@ -16,7 +16,7 @@ public class RestActions {
 
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-		con.setRequestMethod("GET");
+		con.setRequestMethod(httpMethod);
 		return con;
 
 	}
@@ -45,7 +45,7 @@ public class RestActions {
 		String url = baseUrl + endpoint + "?access_token=" + accessToken + "&longUrl="+ longUrl;
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-		con.setRequestMethod("GET");
+		con.setRequestMethod(httpMethod);
 		return con;
 		
 	}

@@ -14,6 +14,11 @@ Feature: Validate various endpoints
   Given I try to access user information with correct "GET" endpoint "/v3/user/info" and incorrect token "b7b24e764586ca39f555bc"
   Then I should get status code "403"
   
+      @verifyUserInfoInValidHttpMethod
+  Scenario: Validate user info endpoint
+  Given I try to access user information with incorrect "POST" endpoint "/v3/user/info" and incorrect token "b7b24e764586ca39f555bc"
+  Then I should get status code "405"
+  
   @ShortenLongUrl
   Scenario: Validate url shorten endpoint
   Given I try to shorten long url "https://en.wikipedia.org/wiki/Oblivion_(2013_film)" with correct "GET" endpoint "/v3/shorten" and correct token "b7b24e743d645bd3661551dcb02486ca39f555bc"
@@ -25,6 +30,11 @@ Feature: Validate various endpoints
     @ShortenLongUrlInvalidToken
   Scenario: Validate url shorten endpoint
   Given I try to shorten long url "https://en.wikipedia.org/wiki/Oblivion_(2013_film)" with correct "GET" endpoint "/v3/shorten" and incorrect token "b7b24e743d6451dcb02486ca39f555bc"
+  Then I should get status code "500"
+  
+      @ShortenLongUrlInvalidHttpMethod
+  Scenario: Validate url shorten endpoint
+  Given I try to shorten long url "https://en.wikipedia.org/wiki/Oblivion_(2013_film)" with incorrect "POST" endpoint "/v3/shorten" and incorrect token "b7b24e743d6451dcb02486ca39f555bc"
   Then I should get status code "500"
 
   @History
@@ -42,3 +52,8 @@ Feature: Validate various endpoints
   Scenario: Validate user link history endpoint
     Given I try to access user information with correct "GET" endpoint "/v3/user/link_history" and incorrect token "b7b24e743d645bd02486ca39f555bc"
     Then I should get status code "403"
+    
+            @HistoryInvalidHttpMethod
+  Scenario: Validate user link history endpoint
+    Given I try to access user information with incorrect "POST" endpoint "/v3/user/link_history" and incorrect token "b7b24e743d645bd02486ca39f555bc"
+    Then I should get status code "405"
