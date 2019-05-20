@@ -1,4 +1,4 @@
-package Utils;
+package main.java.Utils;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;

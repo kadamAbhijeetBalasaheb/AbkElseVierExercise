@@ -1,4 +1,4 @@
-package StepDefinitions;
+package test.java.StepDefinitions;
 
 
 import java.net.HttpURLConnection;
@@ -14,11 +14,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.Assert;
 
-import Utils.JsonEval;
-import Utils.RestActions;
+
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import main.java.Utils.JsonEval;
+import main.java.Utils.RestActions;
 
 public class ElsevierStepDefinitions {
 	
